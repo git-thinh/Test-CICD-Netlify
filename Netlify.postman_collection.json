@@ -1,0 +1,1368 @@
+{
+	"info": {
+		"_postman_id": "c1c73ad4-a203-4979-b740-d1c5f5307443",
+		"name": "Netlify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account User",
+			"item": [
+				{
+					"name": "Current User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/user",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Accounts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/accounts",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Account ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/accounts/{{ACCOUNT_SLUG}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"accounts",
+								"{{ACCOUNT_SLUG}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Site",
+			"item": [
+				{
+					"name": "List Site",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Info Site",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites/{{SITE_ID}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"{{SITE_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Attrs Site",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"state\": \"ready\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites/{{SITE_ID}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"{{SITE_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Attrs Site",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"state\": \"ready\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites/{{SITE_ID}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"{{SITE_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active SSL Site",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites/{{SITE_ID}}/ssl",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"{{SITE_ID}}",
+								"ssl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Site",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites/1536c814-be95-4eae-93f2-41811cd3f636",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"1536c814-be95-4eae-93f2-41811cd3f636"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Site",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"site-1000\",\r\n    \"processing_settings\": {\r\n        \"css\": {\"bundle\": true, \"minify\": true},\r\n        \"js\": {\"bundle\": true, \"minify\": true},\r\n        \"html\": {\"pretty_urls\": true, \"canonical_urls\": true},\r\n        \"images\": {\"optimize\": true}\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rollback Site",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/zip",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites/{{SITE_ID}}/rollback",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"{{SITE_ID}}",
+								"rollback"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "File",
+			"item": [
+				{
+					"name": "List FIle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites/{{SITE_ID}}/files",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"{{SITE_ID}}",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Info a File",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites/{{SITE_ID}}/files/index.html",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"{{SITE_ID}}",
+								"files",
+								"index.html"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Deploy",
+			"item": [
+				{
+					"name": "List Deploy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites/{{SITE_ID}}/deploys",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"{{SITE_ID}}",
+								"deploys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Info Deploy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites/{{SITE_ID}}/deploys/63e1fe5057ca532bf0a62eaa",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"{{SITE_ID}}",
+								"deploys",
+								"63e1fe5057ca532bf0a62eaa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "State Deploy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/deploys/63e1fe5057ca532bf0a62eaa",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"deploys",
+								"63e1fe5057ca532bf0a62eaa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restore deploy",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/zip",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites/{{SITE_ID}}/deploys/63e21a4be231b23a8cf8bf6e/restore",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"{{SITE_ID}}",
+								"deploys",
+								"63e21a4be231b23a8cf8bf6e",
+								"restore"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Zip file deploy",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/zip",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "dist.zip"
+							},
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites/{{SITE_ID}}/deploys",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"{{SITE_ID}}",
+								"deploys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Deploy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"files\": {\r\n    \"/index.html\": \"1b6b3791f4f33553f40ffb329e8dc3c84fbebeab\",\r\n    \"/index.js\": \"{{$guid}}\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites/{{SITE_ID}}/deploys",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"{{SITE_ID}}",
+								"deploys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Deploy Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"files\": {\r\n    \"/index.html\": \"1b6b3791f4f33553f40ffb329e8dc3c84fbebeab\",\r\n    \"/index.js\": \"\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites/{{SITE_ID}}/deploys/63e1fe5057ca532bf0a62eaa",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"{{SITE_ID}}",
+								"deploys",
+								"63e1fe5057ca532bf0a62eaa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lock Deploy",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/octet-stream",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "index.html"
+							},
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/deploys/63e2177b1379f63cde07710e/lock",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"deploys",
+								"63e2177b1379f63cde07710e",
+								"lock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unlock Deploy",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/octet-stream",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "index.html"
+							},
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/deploys/63e2177b1379f63cde07710e/unlock",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"deploys",
+								"63e2177b1379f63cde07710e",
+								"unlock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload File_1 Deploy",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/octet-stream",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "index.html"
+							},
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/deploys/63e1fe5057ca532bf0a62eaa/files/index.html",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"deploys",
+								"63e1fe5057ca532bf0a62eaa",
+								"files",
+								"index.html"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload File_2 Deploy",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/octet-stream",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "index.js"
+							},
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/deploys/63e1fe5057ca532bf0a62eaa/files/index.js",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"deploys",
+								"63e1fe5057ca532bf0a62eaa",
+								"files",
+								"index.js"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Deploy",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/octet-stream",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/deploys/63e21a4be231b23a8cf8bf6e",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"deploys",
+								"63e21a4be231b23a8cf8bf6e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hook",
+			"item": [
+				{
+					"name": "hooks?site_id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/hooks?site_id={{SITE_ID}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"hooks"
+							],
+							"query": [
+								{
+									"key": "site_id",
+									"value": "{{SITE_ID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Environment",
+			"item": [
+				{
+					"name": "Create Var",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"files\": {\r\n    \"/index.html\": \"1b6b3791f4f33553f40ffb329e8dc3c84fbebeab\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites/{{SITE_ID}}/deploys",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"{{SITE_ID}}",
+								"deploys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Var",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/octet-stream",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "index.html"
+							},
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/deploys/63e1fe5057ca532bf0a62eaa/files/index.html",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"deploys",
+								"63e1fe5057ca532bf0a62eaa",
+								"files",
+								"index.html"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Var",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"files\": {\r\n    \"/index.html\": \"1b6b3791f4f33553f40ffb329e8dc3c84fbebeab\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/sites/{{SITE_ID}}/deploys",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"{{SITE_ID}}",
+								"deploys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vars",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.netlify.com/api/v1/accounts/{{ACCOUNT_ID}}/env",
+							"protocol": "https",
+							"host": [
+								"api",
+								"netlify",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"accounts",
+								"{{ACCOUNT_ID}}",
+								"env"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
