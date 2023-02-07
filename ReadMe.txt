@@ -5,4 +5,5 @@
 
 - netlify login
 - netlify init
-- netlify deploy --dir=dist
+- netlify sites:create
+- netlify deploy --prod --dir=dist
