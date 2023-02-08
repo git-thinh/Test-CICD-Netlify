@@ -22,6 +22,7 @@
 
 - set DEBUG=* & netlify deploy --prod --dir=dist
 - netlify deploy --prod --dir=dist
+- netlify deploy --prod --dir=.
 - netlify deploy --prod --path dist/
 
 -------------------------------------------------------------
